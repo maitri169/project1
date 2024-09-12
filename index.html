@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Page 1: Home Page -->
+    <div class="page" id="homePage">
+        <div class="container" data-aos="fade-up">
+            <h1>Sustainability Tracker</h1>
+            <img src="https://www.shutterstock.com/image-vector/reducing-co2-emissions-stop-climate-600nw-2143986923.jpg" alt="Eco Friendly" class="main-image">
+            <p>Monitor your daily activities and reduce your carbon footprint!</p>
+            <button class="btn" onclick="goToTracker()">Start Tracking</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Tracker Page -->
+    <div class="page" id="trackerPage" style="display:none;">
+        <div class="container" data-aos="fade-up">
+            <h2>Daily Activity Tracker</h2>
+            <form id="trackerForm">
+                <div class="input-group">
+                    <label for="travel">Distance Traveled (km):</label>
+                    <input type="number" id="travel" name="travel" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="energy">Energy Consumption (kWh):</label>
+                    <input type="number" id="energy" name="energy" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="food">Meat-Based Meals:</label>
+                    <input type="number" id="food" name="food" required>
+                </div>
+
+                <button type="submit" class="btn">Calculate Carbon Footprint</button>
+            </form>
+
+            <div id="result" data-aos="fade-up">
+                <h3>Your Daily Carbon Footprint</h3>
+                <p id="carbonResult" class="carbon-result">0 kg CO2</p>
+                <p id="carbonRemark" class="carbon-remark"></p> <!-- Remark Section -->
+
+                <canvas id="carbonChart"></canvas>
+            </div>
+
+            <button class="btn" onclick="goToTracker()">Start Tracking</button>
+            <button class="btn" onclick="goToHome()">Back to Home</button>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
